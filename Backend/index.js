@@ -4,9 +4,14 @@ const docxToPDF = require('docx-pdf');
 const path = require('path');
 const fs = require('fs');
 const cors=require('cors');
+require('dotenv').config();
+
+ 
+
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
+ 
 app.use(cors());
 // Ensure the "files" directory exists
 const filesDir = path.join(__dirname, "files");
